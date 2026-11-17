@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>duduDev | Desarrollo web, programación y automatización</title>
+
+    <meta name="description" content="duduDev desarrolla soluciones digitales mediante desarrollo web, programación y automatización de procesos.">
+    <meta name="keywords" content="duduDev, desarrollo web, programación, automatización, software, soluciones digitales">
+    <meta name="author" content="duduDev">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0B1020">
+
+    <link rel="canonical" href="https://dududev94.github.io/dududev-identidad/">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_SV">
+    <meta property="og:site_name" content="duduDev">
+    <meta property="og:title" content="duduDev | Soluciones digitales">
+    <meta property="og:description" content="Desarrollo web, programación y automatización. Transformamos ideas en soluciones digitales.">
+    <meta property="og:url" content="https://dududev94.github.io/dududev-identidad/">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="duduDev | Soluciones digitales">
+    <meta name="twitter:description" content="Desarrollo web, programación y automatización.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S72F0D3RBG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-S72F0D3RBG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #0B1020;
+            --bg-secondary: #10182D;
+            --surface: #151F35;
+            --surface-light: #1B2942;
+
+            --blue: #2563EB;
+            --cyan: #06B6D4;
+            --violet: #A855F7;
+
+            --white: #F8FAFC;
+            --text: #CBD5E1;
+            --muted: #94A3B8;
+            --border: rgba(148,163,184,.15);
+
+            --font-title: 'Manrope', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-code: 'Roboto Mono', monospace;
+
+            --container: 1160px;
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(var(--container), calc(100% - 44px));
+            margin-inline: auto;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11,16,32,.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            font-family: var(--font-title);
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+        }
+
+        .brand-dudu {
+            color: var(--white);
+        }
+
+        .brand-dev {
+            color: var(--cyan);
+        }
+
+        .brand-dot {
+            color: var(--violet);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: .88rem;
+            font-weight: 600;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--border);
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 690px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 80% 35%, rgba(37,99,235,.18), transparent 40%),
+                radial-gradient(ellipse at 15% 85%, rgba(168,85,247,.12), transparent 35%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            align-items: center;
+            gap: 65px;
+            padding-block: 100px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--cyan);
+            font-family: var(--font-code);
+            font-size: .75rem;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 25px;
+            height: 2px;
+            background: var(--cyan);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-title);
+            line-height: 1.2;
+        }
+
+        .hero h1 {
+            margin-top: 25px;
+            max-width: 700px;
+            font-size: clamp(2.8rem, 6vw, 5.3rem);
+            letter-spacing: -4px;
+            font-weight: 800;
+        }
+
+        .gradient-text {
+            background: linear-gradient(100deg, var(--blue), var(--cyan), var(--violet));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 570px;
+            margin-top: 25px;
+            color: var(--text);
+            font-size: 1.08rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            min-height: 48px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 23px;
+            border-radius: 11px;
+            font-weight: 700;
+            font-size: .9rem;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            color: white;
+            background: linear-gradient(110deg, var(--blue), #347BFF);
+            box-shadow: 0 10px 30px rgba(37,99,235,.25);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--white);
+            background: rgba(255,255,255,.03);
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 390px;
+            display: grid;
+            place-items: center;
+        }
+
+        .visual-glow {
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--violet));
+            filter: blur(100px);
+            opacity: .3;
+        }
+
+        .logo-panel {
+            position: relative;
+            width: min(100%, 390px);
+            min-height: 290px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, rgba(27,41,66,.95), rgba(16,24,45,.95));
+            border: 1px solid rgba(148,163,184,.2);
+            border-radius: 28px;
+            box-shadow: 0 35px 90px rgba(0,0,0,.3);
+            transform: rotate(-2deg);
+        }
+
+        .logo-panel img {
+            width: 100%;
+            max-width: 270px;
+            height: auto;
+        }
+
+        .logo-caption {
+            margin-top: 30px;
+            color: var(--muted);
+            font-family: var(--font-code);
+            font-size: .7rem;
+            letter-spacing: 2px;
+        }
+
+        .section {
+            padding: 105px 0;
+        }
+
+        .section-alt {
+            background: var(--bg-secondary);
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+
+        .section-heading h2 {
+            margin-top: 18px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -1.5px;
+        }
+
+        .section-heading p {
+            margin-top: 17px;
+            color: var(--muted);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            position: relative;
+            padding: 32px;
+            min-height: 280px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: transform .3s, border-color .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(6,182,212,.5);
+        }
+
+        .service-icon {
+            width: 53px;
+            height: 53px;
+            display: grid;
+            place-items: center;
+            border-radius: 15px;
+            color: var(--cyan);
+            background: rgba(6,182,212,.1);
+            font-size: 1.45rem;
+            font-weight: 800;
+            font-family: var(--font-code);
+        }
+
+        .service-card h3 {
+            margin-top: 25px;
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            margin-top: 13px;
+            color: var(--muted);
+            font-size: .92rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-visual {
+            min-height: 350px;
+            display: grid;
+            place-items: center;
+            background:
+                radial-gradient(circle at center, rgba(37,99,235,.25), transparent 65%),
+                var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+        }
+
+        .about-symbol {
+            font-family: var(--font-title);
+            font-size: 8rem;
+            font-weight: 800;
+            letter-spacing: -12px;
+            background: linear-gradient(135deg, var(--blue), var(--cyan), var(--violet));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .about-content h2 {
+            margin-top: 18px;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            letter-spacing: -1.5px;
+        }
+
+        .about-content p {
+            margin-top: 20px;
+            color: var(--muted);
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 28px;
+        }
+
+        .principle {
+            padding: 15px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: .88rem;
+        }
+
+        .principle span {
+            color: var(--cyan);
+            margin-right: 8px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .process-card {
+            padding: 25px;
+            border-top: 2px solid var(--blue);
+            background: var(--surface);
+            border-radius: 0 0 15px 15px;
+        }
+
+        .process-number {
+            color: var(--cyan);
+            font-family: var(--font-code);
+            font-size: .8rem;
+        }
+
+        .process-card h3 {
+            margin-top: 17px;
+            font-size: 1.05rem;
+        }
+
+        .process-card p {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: .85rem;
+        }
+
+        .identity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .identity-card {
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .color-preview {
+            height: 120px;
+        }
+
+        .color-info {
+            padding: 20px;
+        }
+
+        .color-info h3 {
+            font-size: 1rem;
+        }
+
+        .color-info p {
+            margin-top: 7px;
+            color: var(--muted);
+            font-family: var(--font-code);
+            font-size: .8rem;
+        }
+
+        .copy-color {
+            margin-top: 15px;
+            padding: 8px 13px;
+            color: var(--cyan);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: transparent;
+            cursor: pointer;
+            font-size: .8rem;
+        }
+
+        .copy-color:hover {
+            background: rgba(6,182,212,.1);
+        }
+
+        .cta-section {
+            padding: 90px 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(37,99,235,.22), transparent 45%),
+                radial-gradient(ellipse at 80% 50%, rgba(168,85,247,.18), transparent 45%),
+                var(--bg-secondary);
+            border-block: 1px solid var(--border);
+        }
+
+        .cta-content {
+            text-align: center;
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .cta-content h2 {
+            margin-top: 18px;
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            letter-spacing: -1.5px;
+        }
+
+        .cta-content p {
+            margin: 20px auto 30px;
+            color: var(--muted);
+            max-width: 600px;
+        }
+
+        .footer {
+            padding: 35px 0;
+            background: #080D19;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer p, .copyright {
+            color: var(--muted);
+            font-size: .82rem;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 2000;
+            padding: 13px 20px;
+            color: white;
+            background: var(--blue);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(15px);
+            pointer-events: none;
+            transition: .25s;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                width: min(100% - 32px, var(--container));
+            }
+
+            .navbar {
+                min-height: 68px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 12px 22px 20px;
+                background: #10182D;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 0;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                padding-block: 75px;
+                gap: 35px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-visual {
+                min-height: 290px;
+            }
+
+            .logo-panel {
+                min-height: 240px;
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .services-grid,
+            .identity-grid,
+            .about-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-visual {
+                min-height: 250px;
+            }
+
+            .about-symbol {
+                font-size: 6rem;
+            }
+
+            .principles {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body data-analytics-page="dududev_home">
+
+    <!-- NAVEGACIÓN -->
+    <header class="header">
+        <nav class="navbar container" aria-label="Navegación principal">
+
+            <a href="#inicio" class="brand"
+               data-analytics-event="navigation_click"
+               data-analytics-category="navigation"
+               data-analytics-label="Logo duduDev - Inicio">
+                <span class="brand-dudu">dudu</span><span class="brand-dev">Dev</span><span class="brand-dot">.</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="navLinks">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#identidad">Identidad</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+
+                <div>
+                    <span class="eyebrow">Desarrollo · Tecnología · Innovación</span>
+
+                    <h1>
+                        Ideas que se convierten en
+                        <span class="gradient-text">soluciones digitales.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        En duduDev combinamos desarrollo web, programación
+                        y automatización para construir experiencias digitales
+                        funcionales, modernas y eficientes.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#servicios" class="btn btn-primary"
+                           data-analytics-event="cta_click"
+                           data-analytics-category="call_to_action"
+                           data-analytics-label="Explorar servicios">
+                            Explorar servicios →
+                        </a>
+
+                        <a href="#nosotros" class="btn btn-outline"
+                           data-analytics-event="cta_click"
+                           data-analytics-category="call_to_action"
+                           data-analytics-label="Conocer duduDev">
+                            Conocer duduDev
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-glow"></div>
+
+                    <div class="logo-panel">
+                        <img src="assets/dududev_logo.svg"
+                             alt="Logotipo oficial de duduDev">
+
+                        <span class="logo-caption">DIGITAL SOLUTIONS · 2026</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section class="section section-alt" id="servicios">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">01 — LO QUE HACEMOS</span>
+                    <h2>Tecnología al servicio de las ideas.</h2>
+                    <p>
+                        Tres áreas de especialización que se complementan
+                        para crear soluciones digitales.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+                        <div class="service-icon">&lt;/&gt;</div>
+                        <h3>Desarrollo web</h3>
+                        <p>
+                            Sitios web, interfaces y aplicaciones digitales
+                            diseñadas para ofrecer experiencias claras,
+                            funcionales y adaptables.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">{ }</div>
+                        <h3>Programación</h3>
+                        <p>
+                            Desarrollo de soluciones de software,
+                            funcionalidades personalizadas e integración
+                            de tecnologías.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">↗</div>
+                        <h3>Automatización</h3>
+                        <p>
+                            Optimización de tareas y procesos mediante
+                            herramientas digitales, scripts e integración
+                            de sistemas.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- NOSOTROS -->
+        <section class="section" id="nosotros">
+            <div class="container about-grid">
+
+                <div class="about-visual">
+                    <div class="about-symbol">dD.</div>
+                </div>
+
+                <div class="about-content">
+                    <span class="eyebrow">02 — NUESTRA IDENTIDAD</span>
+
+                    <h2>Construimos tecnología con propósito.</h2>
+
+                    <p>
+                        duduDev es una marca enfocada en el desarrollo
+                        de soluciones digitales. Nuestra visión es conectar
+                        creatividad, lógica y tecnología para transformar
+                        necesidades en herramientas útiles.
+                    </p>
+
+                    <p>
+                        Creemos en el aprendizaje continuo, la mejora
+                        constante y el valor de construir soluciones
+                        que realmente aporten.
+                    </p>
+
+                    <div class="principles">
+                        <div class="principle"><span>✦</span> Innovación</div>
+                        <div class="principle"><span>✦</span> Funcionalidad</div>
+                        <div class="principle"><span>✦</span> Aprendizaje</div>
+                        <div class="principle"><span>✦</span> Mejora continua</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- METODOLOGÍA -->
+        <section class="section section-alt" id="metodologia">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">03 — NUESTRA FORMA DE TRABAJAR</span>
+                    <h2>De la idea a la solución.</h2>
+                    <p>
+                        Un proceso estructurado para entender necesidades,
+                        construir propuestas y mejorar resultados.
+                    </p>
+                </div>
+
+                <div class="process-grid">
+
+                    <article class="process-card">
+                        <span class="process-number">PASO 01</span>
+                        <h3>Comprender</h3>
+                        <p>
+                            Identificar necesidades, objetivos y problemas
+                            que necesitan una solución.
+                        </p>
+                    </article>
+
+                    <article class="process-card">
+                        <span class="process-number">PASO 02</span>
+                        <h3>Diseñar</h3>
+                        <p>
+                            Definir la estructura, experiencia y tecnología
+                            adecuada para cada proyecto.
+                        </p>
+                    </article>
+
+                    <article class="process-card">
+                        <span class="process-number">PASO 03</span>
+                        <h3>Desarrollar</h3>
+                        <p>
+                            Transformar el diseño en una solución
+                            funcional mediante código.
+                        </p>
+                    </article>
+
+                    <article class="process-card">
+                        <span class="process-number">PASO 04</span>
+                        <h3>Mejorar</h3>
+                        <p>
+                            Revisar, probar y optimizar para ofrecer
+                            una mejor experiencia.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- IDENTIDAD VISUAL -->
+        <section class="section" id="identidad">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">04 — IDENTIDAD VISUAL</span>
+                    <h2>Una identidad reconocible.</h2>
+                    <p>
+                        Una paleta cromática que representa tecnología,
+                        creatividad, innovación y confianza.
+                    </p>
+                </div>
+
+                <div class="identity-grid">
+
+                    <article class="identity-card">
+                        <div class="color-preview" style="background:#2563EB"></div>
+                        <div class="color-info">
+                            <h3>Azul principal</h3>
+                            <p>#2563EB</p>
+                            <button class="copy-color" data-color="#2563EB"
+                                    data-analytics-event="copy_color"
+                                    data-analytics-category="brand_identity"
+                                    data-analytics-label="Copiar azul principal">
+                                Copiar HEX
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="identity-card">
+                        <div class="color-preview" style="background:#06B6D4"></div>
+                        <div class="color-info">
+                            <h3>Cian innovación</h3>
+                            <p>#06B6D4</p>
+                            <button class="copy-color" data-color="#06B6D4"
+                                    data-analytics-event="copy_color"
+                                    data-analytics-category="brand_identity"
+                                    data-analytics-label="Copiar cian">
+                                Copiar HEX
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="identity-card">
+                        <div class="color-preview" style="background:#A855F7"></div>
+                        <div class="color-info">
+                            <h3>Violeta creatividad</h3>
+                            <p>#A855F7</p>
+                            <button class="copy-color" data-color="#A855F7"
+                                    data-analytics-event="copy_color"
+                                    data-analytics-category="brand_identity"
+                                    data-analytics-label="Copiar violeta">
+                                Copiar HEX
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container cta-content">
+
+                <span class="eyebrow">duduDev · SOLUCIONES DIGITALES</span>
+
+                <h2>
+                    La tecnología abre posibilidades.
+                    <span class="gradient-text">Construyamos algo útil.</span>
+                </h2>
+
+                <p>
+                    Desarrollo web, programación y automatización:
+                    ideas que toman forma a través de la tecnología.
+                </p>
+
+                <a href="https://github.com/dududev94"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-primary"
+                   data-analytics-event="cta_click"
+                   data-analytics-category="call_to_action"
+                   data-analytics-label="Visitar GitHub">
+                    Explorar GitHub →
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+
+            <a href="#inicio" class="brand">
+                <span class="brand-dudu">dudu</span><span class="brand-dev">Dev</span><span class="brand-dot">.</span>
+            </a>
+
+            <p>Desarrollo web · Programación · Automatización</p>
+
+            <span class="copyright">
+                © <span id="year"></span> duduDev. Todos los derechos reservados.
+            </span>
+
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        Color copiado
+    </div>
+
+    <script>
+        // Año del footer
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        // Menú móvil
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("active");
+
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Cerrar menú" : "Abrir menú"
+            );
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Abrir menú");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        // Copiar colores HEX
+        const toast = document.getElementById("toast");
+
+        document.querySelectorAll(".copy-color").forEach(button => {
+            button.addEventListener("click", async () => {
+                const color = button.dataset.color;
+
+                try {
+                    await navigator.clipboard.writeText(color);
+
+                    toast.textContent = color + " copiado";
+                    toast.classList.add("show");
+
+                    setTimeout(() => {
+                        toast.classList.remove("show");
+                    }, 2000);
+
+                } catch (error) {
+                    toast.textContent = "No se pudo copiar el color";
+                    toast.classList.add("show");
+
+                    setTimeout(() => {
+                        toast.classList.remove("show");
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+
+    <!-- Seguimiento de eventos existente -->
+    <script src="./js/analytics-events.js" defer id="dududev-analytics-events"></script>
+
+</body>
+</html>
