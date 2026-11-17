@@ -697,6 +697,158 @@
                 transition-duration: .01ms !important;
             }
         }
+    
+        /* =========================================
+           CONTACTO
+        ========================================= */
+
+        .contact-section {
+            padding: 105px 0;
+            background:
+                radial-gradient(ellipse at 15% 50%, rgba(37,99,235,.13), transparent 45%),
+                var(--bg);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 55px;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            margin-top: 18px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -1.5px;
+        }
+
+        .contact-info > p {
+            margin-top: 20px;
+            color: var(--muted);
+        }
+
+        .contact-email {
+            display: inline-flex;
+            margin-top: 28px;
+            padding: 15px 18px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--cyan);
+            overflow-wrap: anywhere;
+        }
+
+        .contact-form {
+            padding: 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text);
+            font-size: .88rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 13px 15px;
+            color: var(--white);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font: inherit;
+            font-size: .9rem;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px rgba(6,182,212,.1);
+        }
+
+        .form-control::placeholder {
+            color: #64748B;
+        }
+
+        .form-control textarea,
+        textarea.form-control {
+            min-height: 145px;
+            resize: vertical;
+        }
+
+        .contact-submit {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-submit:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+
+        .form-notice {
+            margin-top: 15px;
+            color: var(--muted);
+            font-size: .78rem;
+        }
+
+        .form-status {
+            display: none;
+            margin-top: 18px;
+            padding: 13px 15px;
+            border-radius: 10px;
+            font-size: .88rem;
+        }
+
+        .form-status.visible {
+            display: block;
+        }
+
+        .form-status.success {
+            color: #67E8A5;
+            background: rgba(34,197,94,.1);
+            border: 1px solid rgba(34,197,94,.2);
+        }
+
+        .form-status.error {
+            color: #FCA5A5;
+            background: rgba(239,68,68,.1);
+            border: 1px solid rgba(239,68,68,.2);
+        }
+
+        .contact-honeypot {
+            position: absolute !important;
+            left: -9999px !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+        }
+
+        @media (max-width: 680px) {
+            .contact-section {
+                padding: 75px 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .contact-form {
+                padding: 22px;
+            }
+        }
+
     </style>
 </head>
 
@@ -726,6 +878,7 @@
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#metodologia">Metodología</a></li>
                 <li><a href="#identidad">Identidad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -983,6 +1136,132 @@
             </div>
         </section>
 
+
+        <!-- CONTACTO -->
+        <section class="contact-section" id="contacto">
+            <div class="container contact-grid">
+
+                <div class="contact-info">
+
+                    <span class="eyebrow">05 — CONTACTO</span>
+
+                    <h2>
+                        Hablemos de tu
+                        <span class="gradient-text">próxima idea.</span>
+                    </h2>
+
+                    <p>
+                        ¿Tienes un proyecto, una idea o necesitas una
+                        solución tecnológica? Envíanos un mensaje.
+                    </p>
+
+                    <p>
+                        Cuéntanos qué necesitas y nos pondremos en
+                        contacto contigo.
+                    </p>
+
+                    <a class="contact-email"
+                       href="mailto:ce.perez.pro@gmail.com">
+                        ce.perez.pro@gmail.com
+                    </a>
+
+                </div>
+
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                    action="https://formsubmit.co/ce.perez.pro@gmail.com"
+                    method="POST">
+
+                    <!-- Configuración FormSubmit -->
+                    <input type="hidden" name="_subject"
+                           value="Nuevo mensaje desde duduDev">
+
+                    <input type="hidden" name="_template"
+                           value="table">
+
+                    <input type="hidden" name="_captcha"
+                           value="true">
+
+                    <!-- Protección básica contra bots -->
+                    <div class="contact-honeypot" aria-hidden="true">
+                        <label for="website">No completar este campo</label>
+                        <input type="text" id="website"
+                               name="_honey" tabindex="-1"
+                               autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactName">Nombre *</label>
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="contactName"
+                            name="name"
+                            placeholder="Tu nombre"
+                            maxlength="100"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Correo electrónico *</label>
+                        <input
+                            class="form-control"
+                            type="email"
+                            id="contactEmail"
+                            name="email"
+                            placeholder="correo@ejemplo.com"
+                            maxlength="150"
+                            autocomplete="email"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactSubject">Asunto *</label>
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="contactSubject"
+                            name="subject"
+                            placeholder="¿En qué podemos ayudarte?"
+                            maxlength="150"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactMessage">Mensaje *</label>
+                        <textarea
+                            class="form-control"
+                            id="contactMessage"
+                            name="message"
+                            placeholder="Cuéntanos sobre tu proyecto o consulta..."
+                            minlength="10"
+                            maxlength="3000"
+                            required></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary contact-submit"
+                            id="contactSubmit"
+                            data-analytics-event="contact_submit"
+                            data-analytics-category="contact"
+                            data-analytics-label="Enviar formulario de contacto">
+                        Enviar mensaje →
+                    </button>
+
+                    <p class="form-notice">
+                        Tus datos se utilizarán únicamente para responder
+                        a tu consulta.
+                    </p>
+
+                    <div class="form-status" id="formStatus"
+                         role="status" aria-live="polite"></div>
+
+                </form>
+
+            </div>
+        </section>
         <!-- CTA -->
         <section class="cta-section">
             <div class="container cta-content">
@@ -1095,7 +1374,34 @@
     </script>
 
     <!-- Seguimiento de eventos existente -->
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <script>
+        (() => {
+            const form = document.getElementById("contactForm");
+            const button = document.getElementById("contactSubmit");
+            const status = document.getElementById("formStatus");
+
+            if (!form || !button || !status) return;
+
+            form.addEventListener("submit", () => {
+                if (!form.reportValidity()) return;
+
+                button.disabled = true;
+                button.textContent = "Enviando mensaje...";
+
+                // Evento GA4. No transmite el contenido del formulario.
+                if (typeof window.gtag === "function") {
+                    window.gtag("event", "contact_submit", {
+                        event_category: "contact",
+                        event_label: "Formulario duduDev"
+                    });
+                }
+            });
+        })();
+    </script>
     <script src="./js/analytics-events.js" defer id="dududev-analytics-events"></script>
 
 </body>
 </html>
+
