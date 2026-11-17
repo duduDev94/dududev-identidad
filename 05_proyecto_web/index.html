@@ -56,13 +56,13 @@
     <!-- Fin Google Analytics 4 -->
 </head>
 
-<body>
+<body data-analytics-page="identidad_marca">
 
     <!-- NAVEGACIÓN -->
     <header class="header">
         <nav class="navbar container">
 
-            <a href="#inicio" class="brand">
+            <a href="#inicio" class="brand" data-analytics-event="navigation_click" data-analytics-category="navigation" data-analytics-label="Logo duduDev - Inicio">
                 <span class="brand-dudu">dudu</span><span class="brand-dev">Dev</span>
                 <span class="brand-dot">.</span>
             </a>
@@ -72,11 +72,11 @@
             </button>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#identidad">Identidad</a></li>
-                <li><a href="#colores">Colores</a></li>
-                <li><a href="#tipografia">Tipografía</a></li>
-                <li><a href="#aplicaciones">Aplicaciones</a></li>
+                <li><a href="#inicio" data-analytics-event="navigation_click" data-analytics-category="navigation" data-analytics-label="Inicio">Inicio</a></li>
+                <li><a href="#identidad" data-analytics-event="navigation_click" data-analytics-category="navigation" data-analytics-label="Identidad">Identidad</a></li>
+                <li><a href="#colores" data-analytics-event="navigation_click" data-analytics-category="navigation" data-analytics-label="Colores">Colores</a></li>
+                <li><a href="#tipografia" data-analytics-event="navigation_click" data-analytics-category="navigation" data-analytics-label="Tipografía">Tipografía</a></li>
+                <li><a href="#aplicaciones" data-analytics-event="navigation_click" data-analytics-category="navigation" data-analytics-label="Aplicaciones">Aplicaciones</a></li>
             </ul>
 
         </nav>
@@ -103,11 +103,11 @@
                     </p>
 
                     <div class="hero-actions">
-                        <a href="#identidad" class="btn btn-primary">
+                        <a href="#identidad" class="btn btn-primary" data-analytics-event="cta_click" data-analytics-category="call_to_action" data-analytics-label="Explorar identidad">
                             Explorar identidad
                         </a>
 
-                        <a href="#colores" class="btn btn-outline">
+                        <a href="#colores" class="btn btn-outline" data-analytics-event="cta_click" data-analytics-category="call_to_action" data-analytics-label="Ver colores">
                             Ver colores
                         </a>
                     </div>
@@ -201,7 +201,7 @@
                         <div class="color-info">
                             <h3>Azul principal</h3>
                             <p>#2563EB</p>
-                            <button class="copy-color" data-color="#2563EB">
+                            <button class="copy-color" data-color="#2563EB" data-analytics-event="copy_color" data-analytics-category="brand_identity" data-analytics-label="Copiar azul principal">
                                 Copiar HEX
                             </button>
                         </div>
@@ -212,7 +212,7 @@
                         <div class="color-info">
                             <h3>Cian innovación</h3>
                             <p>#06B6D4</p>
-                            <button class="copy-color" data-color="#06B6D4">
+                            <button class="copy-color" data-color="#06B6D4" data-analytics-event="copy_color" data-analytics-category="brand_identity" data-analytics-label="Copiar cian innovación">
                                 Copiar HEX
                             </button>
                         </div>
@@ -223,7 +223,7 @@
                         <div class="color-info">
                             <h3>Violeta creatividad</h3>
                             <p>#A855F7</p>
-                            <button class="copy-color" data-color="#A855F7">
+                            <button class="copy-color" data-color="#A855F7" data-analytics-event="copy_color" data-analytics-category="brand_identity" data-analytics-label="Copiar violeta creatividad">
                                 Copiar HEX
                             </button>
                         </div>
@@ -234,7 +234,7 @@
                         <div class="color-info">
                             <h3>Azul oscuro</h3>
                             <p>#0B1020</p>
-                            <button class="copy-color" data-color="#0B1020">
+                            <button class="copy-color" data-color="#0B1020" data-analytics-event="copy_color" data-analytics-category="brand_identity" data-analytics-label="Copiar azul oscuro">
                                 Copiar HEX
                             </button>
                         </div>
@@ -245,7 +245,7 @@
                         <div class="color-info">
                             <h3>Gris secundario</h3>
                             <p>#64748B</p>
-                            <button class="copy-color" data-color="#64748B">
+                            <button class="copy-color" data-color="#64748B" data-analytics-event="copy_color" data-analytics-category="brand_identity" data-analytics-label="Copiar gris secundario">
                                 Copiar HEX
                             </button>
                         </div>
@@ -256,7 +256,7 @@
                         <div class="color-info">
                             <h3>Blanco</h3>
                             <p>#F8FAFC</p>
-                            <button class="copy-color" data-color="#F8FAFC">
+                            <button class="copy-color" data-color="#F8FAFC" data-analytics-event="copy_color" data-analytics-category="brand_identity" data-analytics-label="Copiar blanco">
                                 Copiar HEX
                             </button>
                         </div>
@@ -385,6 +385,9 @@
                     href="assets/dududev_logo.svg"
                     download="dududev_logo.svg"
                     class="btn btn-primary"
+                    data-analytics-event="download_logo"
+                    data-analytics-category="download"
+                    data-analytics-label="Descargar logotipo SVG"
                 >
                     ↓ Descargar SVG
                 </a>
@@ -422,6 +425,3 @@
     <script src="./js/analytics-events.js" defer id="dududev-analytics-events"></script>
 </body>
 </html>
-
-
-
