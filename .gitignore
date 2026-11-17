@@ -1,0 +1,21 @@
+# Archivos temporales
+*.tmp
+*.log
+
+# Servidor local
+.server.pid
+05_proyecto_web/logs/
+
+# Entornos Python
+.venv/
+venv/
+__pycache__/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editores
+.vscode/
+.idea/

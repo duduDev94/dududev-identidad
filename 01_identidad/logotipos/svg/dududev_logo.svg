@@ -1,0 +1,83 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="420"
+     viewBox="0 0 1200 420"
+     role="img"
+     aria-labelledby="title desc">
+
+  <title id="title">duduDev</title>
+  <desc id="desc">
+    Logotipo tecnológico duduDev con símbolo geométrico
+    azul, cian y violeta.
+  </desc>
+
+  <defs>
+    <!-- Gradiente del isotipo -->
+    <linearGradient id="markGradient"
+                    x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="55%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <!-- Gradiente del texto Dev -->
+    <linearGradient id="wordGradient"
+                    x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ISOTIPO -->
+  <g transform="translate(58 52)"
+     fill="none"
+     stroke="url(#markGradient)"
+     stroke-width="18"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <path d="M188 34 V270 H112
+             C54 270 20 229 20 172
+             C20 115 54 74 112 74 H188"/>
+
+    <!-- Conexiones -->
+    <path d="M188 34 V10"/>
+    <path d="M188 270 V294"/>
+    <path d="M20 172 H0"/>
+    <path d="M188 112 H224"/>
+
+    <!-- Terminales -->
+    <circle cx="188" cy="10" r="9"
+            fill="#2563EB" stroke="none"/>
+    <circle cx="188" cy="294" r="9"
+            fill="#A855F7" stroke="none"/>
+    <circle cx="0" cy="172" r="9"
+            fill="#06B6D4" stroke="none"/>
+    <circle cx="224" cy="112" r="9"
+            fill="#06B6D4" stroke="none"/>
+  </g>
+
+  <!-- LOGOTIPO -->
+  <g font-family="Manrope, Inter, Arial, sans-serif"
+     font-weight="750"
+     font-size="150"
+     letter-spacing="-8">
+
+    <text x="335" y="252" fill="#0B1020">dudu</text>
+    <text x="650" y="252"
+          fill="url(#wordGradient)">Dev</text>
+  </g>
+
+  <!-- ESPECIALIDAD -->
+  <text x="345"
+        y="316"
+        font-family="Inter, Arial, sans-serif"
+        font-size="28"
+        font-weight="500"
+        letter-spacing="5"
+        fill="#64748B">
+    DESARROLLO · PROGRAMACIÓN · AUTOMATIZACIÓN
+  </text>
+
+</svg>
